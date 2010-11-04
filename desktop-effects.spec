@@ -34,12 +34,12 @@ special effects), and GNOME Shell, which offers a preview of the GNOME
 
 %build
 %configure
-
-%{__make} %{?_smp_mflags}
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 desktop-file-validate $RPM_BUILD_ROOT%{_desktopdir}/desktop-effects.desktop
 
@@ -50,7 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc COPYING
 %attr(755,root,root) %{_bindir}/desktop-effects
 %{_iconsdir}/hicolor/*/apps/desktop-effects.png
 %{_desktopdir}/desktop-effects.desktop
