@@ -8,7 +8,7 @@ URL:		http://git.fedorahosted.org/git/?p=desktop-effects.git
 Source0:	https://fedorahosted.org/released/desktop-effects/%{name}-%{version}.tar.bz2
 # Source0-md5:	1ae7f9ee3d231c4276af48488e47fcc8
 BuildRequires:	GConf2-devel
-BuildRequires:	Mesa-libGL-devel
+BuildRequires:	OpenGL-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	desktop-file-utils
