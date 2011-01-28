@@ -9,13 +9,12 @@ Source0:	https://fedorahosted.org/released/desktop-effects/%{name}-%{version}.ta
 # Source0-md5:	1ae7f9ee3d231c4276af48488e47fcc8
 BuildRequires:	GConf2-devel
 BuildRequires:	OpenGL-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	desktop-file-utils
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel
-BuildRequires:	libtool
+BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libXcomposite-devel
 Requires(pre,postun):	gtk+2
 Requires:	gnome-session
@@ -48,15 +47,15 @@ desktop-file-validate $RPM_BUILD_ROOT%{_desktopdir}/desktop-effects.desktop
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_icon_cache hicolor
+
+%postun
+%update_icon_cache hicolor
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/desktop-effects
 %{_iconsdir}/hicolor/*/apps/desktop-effects.png
 %{_desktopdir}/desktop-effects.desktop
 %{_datadir}/desktop-effects/
-
-%post
-%update_icon_cache hicolor
-
-%postun
-%update_icon_cache hicolor
