@@ -1,7 +1,7 @@
 Summary:	Switch GNOME window management and effects
 Name:		desktop-effects
 Version:	0.8.7
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 URL:		http://git.fedorahosted.org/git/?p=desktop-effects.git
@@ -16,9 +16,9 @@ BuildRequires:	intltool
 BuildRequires:	libglade2-devel
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libXcomposite-devel
-Requires(pre,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
+Requires(post,postun):	hicolor-icon-theme
 Requires:	gnome-session
-Requires:	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
