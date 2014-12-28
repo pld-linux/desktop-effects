@@ -10,7 +10,7 @@ Source0:	https://fedorahosted.org/released/desktop-effects/%{name}-%{version}.ta
 BuildRequires:	GConf2-devel
 BuildRequires:	OpenGL-devel
 BuildRequires:	desktop-file-utils
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel
